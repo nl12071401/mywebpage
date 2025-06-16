@@ -13,6 +13,58 @@
             padding: 20px;
             background-color: #f8f9fa;
         }
+        /* 導覽列樣式 */
+        .navbar {
+            background: #1976d2;
+            padding: 0;
+            margin: 0 0 24px 0;
+            display: flex;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .nav-item {
+            position: relative;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-link {
+            display: block;
+            color: #fff;
+            padding: 18px 28px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+        .nav-link:hover, .nav-item:hover > .nav-link {
+            background: #1565c0;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background: #fff;
+            min-width: 180px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            z-index: 10;
+            margin-top: 0;
+            padding: 0;
+            border-radius: 0 0 10px 10px;
+        }
+        .dropdown a {
+            color: #1976d2;
+            padding: 14px 24px;
+            display: block;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .dropdown a:hover {
+            background: #f0f4f8;
+        }
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+        /* 原有樣式 */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -62,6 +114,16 @@
     </style>
 </head>
 <body>
+    <!-- 導覽列 -->
+    <ul class="navbar">
+        <li class="nav-item">
+            <a class="nav-link">分類 ▼</a>
+            <ul class="dropdown">
+                <li><a href="gooaye/">股癌筆記</a></li>
+            </ul>
+        </li>
+    </ul>
+
     <!-- 影片嵌入 -->
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/Op_lsH_ys5g" 
@@ -97,3 +159,4 @@
     </div>
 </body>
 </html>
+
