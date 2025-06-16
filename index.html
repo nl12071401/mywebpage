@@ -1,162 +1,165 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>影片解析 - 關稅過山車，川普究竟想幹嘛？</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "微軟正黑體", "蘋方-繁", sans-serif;
-            line-height: 1.6;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
-        /* 導覽列樣式 */
-        .navbar {
-            background: #1976d2;
-            padding: 0;
-            margin: 0 0 24px 0;
-            display: flex;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .nav-item {
-            position: relative;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .nav-link {
-            display: block;
-            color: #fff;
-            padding: 18px 28px;
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: background 0.2s;
-            cursor: pointer;
-        }
-        .nav-link:hover, .nav-item:hover > .nav-link {
-            background: #1565c0;
-        }
-        .dropdown {
-            display: none;
-            position: absolute;
-            background: #fff;
-            min-width: 180px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            z-index: 10;
-            margin-top: 0;
-            padding: 0;
-            border-radius: 0 0 10px 10px;
-        }
-        .dropdown a {
-            color: #1976d2;
-            padding: 14px 24px;
-            display: block;
-            text-decoration: none;
-            font-size: 1em;
-        }
-        .dropdown a:hover {
-            background: #f0f4f8;
-        }
-        .nav-item:hover .dropdown {
-            display: block;
-        }
-        /* 原有樣式 */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            margin: 20px 0;
-            background: #000;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .section {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin: 20px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        h1 {
-            color: #1a1a1a;
-            font-size: 2.2em;
-            margin-bottom: 15px;
-        }
-        h2 {
-            color: #2d2d2d;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin: 25px 0 15px;
-        }
-        .highlight {
-            color: #d32f2f;
-            font-weight: 500;
-        }
-        ul {
-            padding-left: 24px;
-        }
-        li {
-            margin: 10px 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小林說筆記關稅</title>
+  <style>
+    body {
+      font-family: 'Noto Sans TC', '微軟正黑體', '蘋方-繁', Arial, sans-serif;
+      margin: 0;
+      background: #f7f9fa;
+    }
+    /* 頂部導覽列 */
+    .nav-bar {
+      background: #176d6a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      height: 70px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      position: relative;
+      z-index: 10;
+    }
+    .nav-title {
+      font-size: 2.2em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-right: 40px;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 28px;
+      flex: 1;
+    }
+    .nav-item {
+      position: relative;
+      font-size: 1.15em;
+    }
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      padding: 18px 0;
+      display: block;
+      cursor: pointer;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: #ffd700;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      min-width: 160px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border-radius: 0 0 8px 8px;
+      padding: 12px 0;
+    }
+    .dropdown a {
+      color: #176d6a;
+      text-decoration: none;
+      display: block;
+      padding: 10px 24px;
+      font-size: 1em;
+      transition: background 0.15s;
+    }
+    .dropdown a:hover {
+      background: #e5f4f3;
+    }
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+    /* 文章卡片區 */
+    .main-content {
+      max-width: 900px;
+      margin: 48px auto 0 auto;
+      padding: 0 20px;
+    }
+    .article-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      padding: 36px 32px 28px 32px;
+      margin-bottom: 32px;
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+      border-left: 6px solid #176d6a;
+    }
+    .article-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    }
+    .article-date {
+      color: #176d6a;
+      font-size: 1em;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .article-title {
+      font-size: 1.6em;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #222;
+    }
+    .article-desc {
+      color: #444;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 700px) {
+      .nav-bar { flex-direction: column; height: auto; padding: 0 10px;}
+      .nav-title { margin: 12px 0; }
+      .nav-menu { flex-direction: column; gap: 0;}
+      .article-card { padding: 24px 12px; }
+    }
+  </style>
 </head>
 <body>
-    <!-- 導覽列 -->
-    <ul class="navbar">
-        <li class="nav-item">
-            <a class="nav-link">分類 ▼</a>
-            <ul class="dropdown">
-                <li><a href="gooaye/">股癌筆記</a></li>
-            </ul>
-        </li>
+  <!-- 導覽列 -->
+  <nav class="nav-bar">
+    <div class="nav-title">嗯嗯．莉莉嗯</div>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a class="nav-link">股癌筆記 ▼</a>
+        <ul class="dropdown">
+          <li><a href="gooaye/ep566.html">EP566</a></li>
+          <li><a href="gooaye/ep567.html">EP567</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">知識累積 ▼</a>
+        <ul class="dropdown">
+          <li><a href="knowledge/xiaolin.html">小林說</a></li>
+          <li><a href="knowledge/other.html">其他</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">旅遊筆記 ▼</a>
+        <ul class="dropdown">
+          <li><a href="travel/tokyo.html">東京</a></li>
+          <li><a href="travel/hokkaido.html">北海道</a></li>
+          <li><a href="travel/osaka.html">大阪</a></li>
+          <li><a href="travel/egypt.html">埃及</a></li>
+          <li><a href="travel/cebu.html">宿霧</a></li>
+        </ul>
+      </li>
     </ul>
+  </nav>
 
-    <!-- 影片嵌入 -->
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/Op_lsH_ys5g" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></iframe>
+  <!-- 文章卡片區 -->
+  <div class="main-content">
+    <div class="article-card" onclick="location.href='knowledge/xiaolin.html'">
+      <div class="article-date">2025.06.16</div>
+      <div class="article-title">小林說筆記：關稅過山車，川普究竟想幹嘛？</div>
+      <div class="article-desc">
+        本篇筆記整理自小林說頻道，深入解析川普關稅政策的戰略意圖、經濟影響，以及對國際貿易的長遠影響。點擊閱讀詳細內容與重點摘要。
+      </div>
     </div>
-
-    <!-- 內容區 -->
-    <div class="section">
-        <h1>關稅過山車，川普究竟想幹嘛？</h1>
-        <p>發布日期：2025年5月17日｜頻道：<span class="highlight">小Lin說</span></p>
-        
-        <h2>📌 核心觀點解析</h2>
-        <ul>
-            <li>分析川普關稅政策的戰略意圖與經濟影響</li>
-            <li>探討國際經貿格局的潛在變動</li>
-            <li>解讀政策背後的政治盤算與選舉考量</li>
-        </ul>
-
-        <h2>🔍 重點內容摘要</h2>
-        <ul>
-            <li>關稅政策調整的時間點與產業針對性分析</li>
-            <li>中美經貿關係的階段性特徵解析</li>
-            <li>全球供應鏈重組趨勢預測</li>
-        </ul>
-
-        <h2>📂 相關連結</h2>
-        <ul>
-            <li>影片原始連結：<a href="https://youtu.be/Op_lsH_ys5g">YouTube 原始影片</a></li>
-            <li>頻道首頁：<a href="https://www.youtube.com/@xiaolinshuo">小Lin說官方頻道</a></li>
-        </ul>
-    </div>
+    <!-- 你可以複製上方 .article-card 新增更多文章卡片 -->
+  </div>
 </body>
 </html>
-
